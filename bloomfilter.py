@@ -2,9 +2,11 @@ import sys
 import random
 import pyhash
 #important variables for the bloom filter
-length     = 10000000
-k          = 4
-saturation = 300000
+if len(sys.argv) != 4:
+    raise ValueError
+length     = int(sys.argv[1])
+k          = int(sys.argv[2])
+saturation = int(sys.argv[3])
 
 hasher = pyhash.fnv1_64()
 
